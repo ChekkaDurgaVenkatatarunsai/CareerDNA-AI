@@ -1,0 +1,13 @@
+{
+  "name": "careerdna-ai-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CareerDNA AI — Backend database schema, seed scripts, and Supabase configuration",
+  "scripts": {
+    "seed": "node scripts/seed-supabase.js",
+    "schema": "echo 'Execute database/schema.sql in your Supabase SQL Editor'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

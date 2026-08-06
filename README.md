@@ -15,6 +15,28 @@
 
 ---
 
+## 📁 Project Structure
+
+```
+CareerDNA-AI/
+├── frontend/                    # Next.js 14 App (UI + API Routes)
+│   ├── app/                     # Pages & API routes
+│   ├── components/              # Reusable React components
+│   ├── lib/                     # AI engine, Supabase client, types
+│   ├── package.json
+│   └── README.md
+├── backend/                     # Database & Server Configuration
+│   ├── database/schema.sql      # Complete PostgreSQL DDL + seed data
+│   ├── supabase/                # Supabase-specific schema & seeds
+│   ├── scripts/                 # Node.js seed script
+│   ├── package.json
+│   └── README.md
+├── .gitignore
+└── README.md
+```
+
+---
+
 ## 🌟 Key Platform Capabilities
 
 - **Unified Academic Guidance Explorer (`/student/academic-guidance`)**: Unified Class 10 stream explorer and Class 12 degree matcher in one cohesive view.
@@ -30,41 +52,40 @@
 
 ---
 
-## 🏗️ Tech Stack & Architecture
-
-- **Frontend**: Next.js 14 App Router, React 18, TypeScript, Tailwind CSS, Lucide Icons, Recharts, Framer Motion.
-- **Backend & Database**: Next.js API Routes, Supabase PostgreSQL, `pgvector` (1536-dim embeddings), Supabase RPC vector search.
-- **Database Schema**: Full DDL and seed data in [`schema.sql`](./schema.sql).
-
----
-
 ## 🛠️ Quick Start & Local Setup
 
 ### 1. Clone & Install Dependencies
 ```bash
 git clone https://github.com/ChekkaDurgaVenkatatarunsai/CareerDNA-AI.git
-cd CareerDNA-AI
+cd CareerDNA-AI/frontend
 npm install
 ```
 
 ### 2. Environment Configuration
-Create a `.env.local` file in the root directory:
+Create a `.env.local` file in the `frontend/` directory:
 ```env
-NEXT_PUBLIC_APP_URL=http://localhost:3005
+NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_SUPABASE_URL=https://your-supabase-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-OPENAI_API_KEY=sk-proj-your-openai-key
 ```
 
 ### 3. Initialize Supabase Database
-Copy and execute [`schema.sql`](./schema.sql) in your [Supabase SQL Editor](https://supabase.com/dashboard).
+Copy and execute `backend/database/schema.sql` in your [Supabase SQL Editor](https://supabase.com/dashboard).
 
 ### 4. Run Development Server
 ```bash
-npm run dev -- -p 3005
+cd frontend
+npm run dev
 ```
-Open **[http://localhost:3005](http://localhost:3005)** in your browser.
+Open **[http://localhost:3000](http://localhost:3000)** in your browser.
+
+---
+
+## 🏗️ Tech Stack & Architecture
+
+- **Frontend**: Next.js 14 App Router, React 18, TypeScript, Tailwind CSS, Lucide Icons, Recharts, Framer Motion.
+- **Backend & Database**: Next.js API Routes, Supabase PostgreSQL, `pgvector` (1536-dim embeddings), Supabase RPC vector search.
+- **Database Schema**: Full DDL and seed data in `backend/database/schema.sql`.
 
 ---
 
